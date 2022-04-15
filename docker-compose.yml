@@ -1,0 +1,16 @@
+version: "3"
+services:
+  tmp-broker:
+    hostname: tmp-broker
+    container_name: tmp-broker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "3000"
+    networks:
+      - common
+
+networks:
+  common:
+    external: true
